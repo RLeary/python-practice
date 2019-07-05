@@ -1,0 +1,18 @@
+import sys
+
+INPUT_FILE = sys.argv[-1]
+EDITED_FILE = 'output.txt'
+
+try:
+    read_file = open(INPUT_FILE, 'r')
+except FileExistsError:
+        print("Input does not exist")
+
+
+lines = read_file.readlines()
+
+read_file.close()
+
+del lines[-3:]
+
+write_file = open(EDITED_FILE, 'w')
